@@ -16,8 +16,8 @@ export default function FactBox({
   else if (showCorrect) className += " correct";
 
   return (
-    <div className={className} onClick={onClick}>
+    <button className={className} onClick={onClick}>
       {fact}
-    </div>
+    </button>
   );
 }
