@@ -22,7 +22,7 @@ export default function Header({ onBack }: { onBack: () => void }) {
             >
                 ⬅️ Zurück
             </button>
-            <h1 style={{ margin: "0 0 10px 0", pointerEvents: "auto" }}>2 LIES 1 TRUTH</h1>
+            <h1 style={{ margin: "0 0 10px 0", pointerEvents: "auto" }}>2 LIES 1 FACT</h1>
         </div>
     );
 }
