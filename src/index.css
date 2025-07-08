@@ -1,2 +1,80 @@
-@import 'tailwindcss';
+body {
+  margin: 0;
+  background-color: black;
+  font-family: "Press Start 2P", monospace;
+  color: white;
+  text-align: center;
+}
 
+.game-container {
+  padding-top: 60px;
+}
+
+button {
+  font-family: "Press Start 2P", monospace;
+  background-color: #222;
+  color: #fff;
+  padding: 1rem;
+  border: 2px solid #fff;
+  margin: 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+button:hover {
+  background-color: #444;
+}
+
+.fact-box {
+  border: 2px solid white;
+  padding: 1rem;
+  margin: 1rem auto;
+  max-width: 600px;
+  cursor: pointer;
+}
+
+.fact-box:hover {
+  background-color: #222;
+}
+
+.correct {
+  background-color: green;
+}
+
+.wrong {
+  background-color: red;
+}
+
+.loading-text {
+  color: white;
+  margin: 2rem 0;
+  position: relative;
+  display: inline-block;
+}
+
+.loading-dots::after {
+  content: "";
+  position: absolute;
+  margin-left: 5px;
+  animation: dots 1.5s infinite steps(4);
+}
+
+@keyframes dots {
+  0% {
+    content: "";
+  }
+  25% {
+    content: ".";
+  }
+  50% {
+    content: "..";
+  }
+  75% {
+    content: "...";
+  }
+}
+
+.timer-display {
+  margin: 1rem 0;
+  font-size: 0.9em;
+}

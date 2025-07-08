@@ -1,14 +1,11 @@
-import './App.css'
-import Header from './components/Header/Header.tsx'
-import Main from './components/Main/Main.tsx'
+import { useState } from "react";
+import ModeSelector from "./components/ModeSelector";
+import GamePage from "./components/pages/GamePage.tsx";
 
 function App() {
-  return (
-      <>
-        <Header/>
-        <Main/>
-      </>
-  )
+    const [mode, setMode] = useState<"" | "classic" | "timer">("");
+
+    return mode ? <GamePage mode={mode} onBack={() => setMode("")} /> : <ModeSelector onSelect={setMode} />;
 }
 
-export default App
+export default App;
