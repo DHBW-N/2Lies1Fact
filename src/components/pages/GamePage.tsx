@@ -57,7 +57,8 @@ export default function GamePage({
     }
 
     try {
-      const [truth, lies] = await Promise.all([fetchTruth(), fetchLies()]);
+      const [truth] = await Promise.all([fetchTruth()]);
+      const lies = ["Lie1", "Lie2"];
       if (!Array.isArray(lies)) {
         setStatus("Fehler beim Laden der Lügen. Bitte Backend prüfen!");
         setLoading(false);
