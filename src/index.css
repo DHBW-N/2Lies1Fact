@@ -6,6 +6,10 @@ body {
   text-align: center;
 }
 
+*:focus {
+  outline: white 4px solid;
+}
+
 .game-container {
   padding-top: 60px;
 }
