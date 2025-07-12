@@ -33,7 +33,8 @@ export default function GamePage({
     if (
       clickedIndex === null &&
       facts.length > 0 &&
-      !status.startsWith("Fehler")
+      !status.startsWith("Fehler") &&
+      mode !== "classic"
     ) {
       handleClick(-1);
     }
