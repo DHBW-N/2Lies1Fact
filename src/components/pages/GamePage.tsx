@@ -8,6 +8,9 @@ import Scoreboard from "../Scoreboard";
 import redheart from "../../assets/redheart.png";
 import blackheart from "../../assets/blackheart.png";
 
+/**
+ * GamePage holds the game logic and unites all the components needed while the game is running.
+ */
 export default function GamePage({
   mode,
   onBack,
@@ -59,6 +62,8 @@ export default function GamePage({
 
     try {
       const [truth, lies] = await Promise.all([fetchTruth(), fetchLies()]);
+
+      // if the response isn't correct inform the user and stop the game
       if (!Array.isArray(lies)) {
         setStatus("Fehler beim Laden der Lügen. Bitte Backend prüfen!");
         setLoading(false);
@@ -67,9 +72,12 @@ export default function GamePage({
         setCorrectIndex(-1);
         return;
       }
+
+      // shuffle the fact and lies
       const combined = [...lies, truth].sort(() => Math.random() - 0.5);
       setFacts(combined);
       setCorrectIndex(combined.indexOf(truth));
+
       if (mode === "timer") setTimer(10);
     } catch (e) {
       setStatus("Fehler beim Laden der Fakten.");
@@ -102,6 +110,8 @@ export default function GamePage({
       if (mode === "classic") {
         const newMistakes = mistakes + 1;
         setMistakes(newMistakes);
+
+        // if the user has lost (no hearts)
         if (newMistakes >= 3) {
           if (streak > 0) {
             setHighscores((prev) => {
@@ -119,6 +129,8 @@ export default function GamePage({
           setTimeout(() => generateFacts(), 2000);
         }
       } else {
+        // timer mode
+
         if (streak > 0) {
           setHighscores((prev) => {
             const newScores = [...prev, streak]

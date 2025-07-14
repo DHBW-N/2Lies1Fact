@@ -1,5 +1,8 @@
 import { useEffect, useState } from "react";
 
+/**
+ * The timer is used in the timer game mode. When the timer runs out it calls the method onTimeout.
+ */
 export function useTimer(initialTime: number, onTimeout: () => void) {
     const [time, setTime] = useState(initialTime);
 

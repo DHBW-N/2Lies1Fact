@@ -1,3 +1,6 @@
+/**
+ * The Header of the page
+ */
 export default function Header({ onBack }: { onBack: () => void }) {
     return (
         <div

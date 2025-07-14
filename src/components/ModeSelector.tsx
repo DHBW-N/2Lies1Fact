@@ -1,3 +1,6 @@
+/**
+ * The ModeSelector is visible when the webpage is opened. You can choose which game mode you want to play here
+ */
 export default function ModeSelector({ onSelect }: { onSelect: (mode: "classic" | "timer") => void }) {
     return (
         <div>

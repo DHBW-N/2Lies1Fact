@@ -1,3 +1,6 @@
+/**
+ * The scoreboard with the best 5 scores.
+ */
 export default function Scoreboard({ highscores }: { highscores: number[] }) {
   // Fülle das Array auf 5 Plätze mit 0, falls weniger als 5 Werte
   const filled = [...highscores, ...Array(5 - highscores.length).fill(0)];

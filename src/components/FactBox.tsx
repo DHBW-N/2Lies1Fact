@@ -1,3 +1,6 @@
+/**
+ * The FactBox is the component which holds the fact/lies and shows them on the screen
+ */
 export default function FactBox({
   fact,
   onClick,
@@ -12,6 +15,8 @@ export default function FactBox({
   showCorrect?: boolean;
 }) {
   let className = "fact-box";
+
+  // For visual highlight of false and correct answers
   if (selected) className += isCorrect ? " correct" : " wrong";
   else if (showCorrect) className += " correct";
 
