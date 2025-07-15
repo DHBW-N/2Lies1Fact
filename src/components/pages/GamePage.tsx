@@ -159,35 +159,30 @@ export default function GamePage({
     <div className="game-container">
       <Header onBack={onBack} />
 
-      {mode === "classic" && (
-        <div
-          style={{
-            position: "absolute",
-            top: 110,
-            left: 20,
-            display: "flex",
-            gap: 2,
-            zIndex: 2,
-          }}
-        >
-          {[0, 1, 2].map((i) => (
-            <img
-              key={i}
-              src={i < 3 - mistakes ? redheart : blackheart}
-              alt="heart"
-              width={56}
-              height={56}
-              style={{ display: "block" }}
-            />
-          ))}
-        </div>
-      )}
+      <div className={"user-info"}>
+        <Scoreboard highscores={highscores} />
 
-      <Scoreboard highscores={highscores} />
+        {mode === "classic" && (
+          <div
+            className={"hearts"}
+          >
+            {[0, 1, 2].map((i) => (
+              <img
+                key={i}
+                src={i < 3 - mistakes ? redheart : blackheart}
+                alt={i < 3 - mistakes ? "red heart" : "lost heart"}
+                width={56}
+                height={56}
+                style={{ display: "block" }}
+              />
+            ))}
+          </div>
+        )}
+      </div>
 
       <div style={{ marginTop: 20, marginBottom: 10 }}>
-        <div style={{ fontSize: "0.9em" }}>
-          🔥 Streak: {streak} | 🏆 Highscore: {highscore}
+        <div className={"game-info"}>
+          🔥&nbsp;Streak:&nbsp;{streak} | 🏆&nbsp;Highscore:&nbsp;{highscore}
         </div>
       </div>
 

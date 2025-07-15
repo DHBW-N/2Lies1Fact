@@ -6,17 +6,7 @@ export default function Scoreboard({ highscores }: { highscores: number[] }) {
   const filled = [...highscores, ...Array(5 - highscores.length).fill(0)];
   return (
     <div
-      style={{
-        position: "absolute",
-        top: 10,
-        right: 10,
-        background: "rgba(0,0,0,0.8)",
-        padding: "1rem",
-        border: "2px solid #fff",
-        borderRadius: "8px",
-        minWidth: "120px",
-        textAlign: "left",
-      }}
+      className={"scoreboard"}
     >
       <div style={{ fontWeight: "bold", marginBottom: "0.5em" }}>
         🏆 Highscores

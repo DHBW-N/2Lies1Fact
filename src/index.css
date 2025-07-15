@@ -6,12 +6,17 @@ body {
   text-align: center;
 }
 
-*:focus {
-  outline: white 4px solid;
+header {
+  margin-top: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column-reverse;
 }
 
-.game-container {
-  padding-top: 60px;
+*:focus {
+  outline: white 4px solid;
 }
 
 button {
@@ -23,6 +28,38 @@ button {
   margin: 1rem;
   cursor: pointer;
   transition: all 0.2s ease;
+}
+
+.returnButton {
+  justify-self: left;
+  pointer-events: auto;
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.scoreboard {
+  background: rgba(0,0,0,0.8);
+  padding: 1rem;
+  border: 2px solid #fff;
+  border-radius: 8px;
+  min-width: 120px;
+  text-align: left;
+  margin: 0 10px;
+  max-width: 500px;
+}
+
+.hearts {
+  display: flex;
+  gap: 2px;
+  z-index: 2;
+}
+
+.game-info {
+  max-font-size: 0.9em;
 }
 
 .correct {
@@ -78,4 +115,36 @@ button:hover {
 .timer-display {
   margin: 1rem 0;
   font-size: 0.9em;
+}
+
+@media (min-width: 720px) {
+  .user-info {
+    flex-direction: row;
+  }
+
+  .hearts {
+    margin-left: auto;
+    margin-right: 50px;
+  }
+}
+
+@media (min-width: 1100px) {
+  header {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  header div {
+    width: 290px;
+  }
+
+  .hearts {
+    margin-right: calc(50% - 500px);
+  }
+}
+
+@media (min-width: 1520px) {
+  .scoreboard {
+    margin-left: calc(50% - 750px);
+  }
 }
