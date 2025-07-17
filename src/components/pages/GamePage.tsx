@@ -32,7 +32,7 @@ export default function GamePage({
   });
   const [status, setStatus] = useState("");
   const [loading, setLoading] = useState(false);
-  const [timer, setTimer] = useTimer(10, () => {
+  const [timer, setTimer] = useTimer(45, () => {
     if (
       clickedIndex === null &&
       facts.length > 0 &&
@@ -78,7 +78,7 @@ export default function GamePage({
       setFacts(combined);
       setCorrectIndex(combined.indexOf(truth));
 
-      if (mode === "timer") setTimer(10);
+      if (mode === "timer") setTimer(45);
     } catch (e) {
       setStatus("Fehler beim Laden der Fakten.");
       if (mode === "timer") setTimer(0);
