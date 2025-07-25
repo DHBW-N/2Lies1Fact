@@ -5,7 +5,7 @@ import "@testing-library/jest-dom";
 // Mocks für API und Timer
 jest.mock('../../api', () => ({
     fetchTruth: jest.fn(() => Promise.resolve('Das ist die Wahrheit')),
-    fetchLies: jest.fn(() => Promise.resolve(['Lüge 1', 'Lüge 2', 'Lüge 3']))
+    fetchLies: jest.fn(() => Promise.resolve(['Lüge 1', 'Lüge 2']))
 }));
 
 jest.mock('../../components/hooks/useTimer', () => ({
