@@ -1,7 +1,32 @@
 {
   "files": [],
   "references": [
-    { "path": "./tsconfig.app.json" },
-    { "path": "./tsconfig.node.json" }
-  ]
+    {
+      "path": "./tsconfig.app.json"
+    },
+    {
+      "path": "./tsconfig.node.json"
+    }
+  ],
+  "include": [
+    "src/**/*"
+  ],
+  "compilerOptions": {
+    "types": [
+      "jest",
+      "node"
+    ],
+    "jsx": "react-jsx",
+    "typeRoots": [
+      "./src/test/types",
+      "./node_modules/@types"
+    ],
+    "composite": true,
+    "declaration": true,
+    "declarationMap": true,
+    "emitDeclarationOnly": true,
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "tsBuildInfoFile": "./dist/tsconfig.tsbuildinfo"
+  }
 }

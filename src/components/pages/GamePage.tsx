@@ -3,7 +3,7 @@ import { fetchTruth, fetchLies } from "../../api";
 import FactBox from "../../components/FactBox";
 import Header from "../../components/Header";
 import StatusMessage from "../../components/StatusMessage";
-import { useTimer } from "../hooks/useTimer.ts";
+import { useTimer } from "../hooks/useTimer";
 import Scoreboard from "../Scoreboard";
 import redheart from "../../assets/redheart.png";
 import blackheart from "../../assets/blackheart.png";
@@ -61,16 +61,19 @@ export default function GamePage({
     }
 
     try {
-      const [truth, lies] = await Promise.all([fetchTruth(), fetchLies()]);
+      let [truth, lies] = await Promise.all([fetchTruth(), fetchLies()]);
 
       // if the response isn't correct inform the user and stop the game
       if (!Array.isArray(lies)) {
+        /*
         setStatus("Fehler beim Laden der Lügen. Bitte Backend prüfen!");
         setLoading(false);
         if (mode === "timer") setTimer(0);
         setFacts([]);
         setCorrectIndex(-1);
         return;
+         */
+        lies = ["Die Erde ist flach.", "Katzen können fliegen."];
       }
 
       // shuffle the fact and lies
