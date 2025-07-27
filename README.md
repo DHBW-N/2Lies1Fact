@@ -1,54 +1,22 @@
-# React + TypeScript + Vite
+<h1>2Lies1Fact</h1>
+2Lies1Fact is a game where players have to guess which of three statements is a fact. The other two are lies.
+There are two game modes available:
+<ol>
+  <li>Classic Mode: The player starts with three hearts and loses one for each mistake. If all the hearts are lost, the game ends.</li>
+  <li>Timer Mode: The player has 45 seconds to find the fact. If the time runs out or they click on the wrong one, the game ends.</li>
+</ol>
+The game won't work without the backend. You can get it <a href="https://github.com/DHBW-N/2Lies1Fact-API">here.</a>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<h2>Getting Started</h2>
+<ol>
+  <li>Clone the repository to your local machine.</li>
+  <li>Navigate to the root directory of the project.</li>
+  <li>
+    Install packages
+    <pre>npm install</pre>
+  </li>
+</ol>
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+<h2>Start the frontend</h2>
+You can start the frontend using <code>npm start</code> <br>
+The server will connect to the backend automatically.
